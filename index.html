@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+    content="width=device-width,initial-scale=1.0"/>
+    <title>Responsive Layout</title>
+    <style>
+        *{box-sizing:border-box;
+        margin: 0;
+        padding: 0;
+        }
+        body{
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header{
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: o.5em;
+         }
+         .container{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            padding: 20px;
+         }
+         .main-content{
+            flex: 3;
+            background: f4f4f4;
+            padding: 20px;
+         }
+
+        .sidebar{
+            flex: 1;
+            background: #ddd;
+            padding: 20px;
+
+        }
+        footer{
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        /*responsive layout using media queries*/
+        @media(max-width: 768px) {
+            .container{
+                flex-direction: column;
+            }
+            nav{
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media(min-width: 769px) and(max-width: 1024px){
+            .container{
+                flex-direction: column;
+            }
+            nav{
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+        @media(min-width:1025px) {
+            .container{
+                flex-direction: row;
+            }
+            nav{
+                flex-direction: row;
+            }
+        }
+        </style>
+        </head>
+        <body>
+            <header>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </header>
+            <div class="container">
+                <div class="main-content">
+                    <h1>main content</h1>
+                    <p>This is the main content area.It stretches based on the screen size.</p>
+                </div>
+            <div class="sidebar">
+                <h2>sidebar</h2>
+                <p>Some additional information or widgets can go here</p>
+            </div>
+            </div>
+            <footer>
+                <p>@2025 Your Website</p>
+            </footer>
+        </body>
+</html>
